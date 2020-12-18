@@ -83,8 +83,6 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 
-
-"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -95,11 +93,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-"""
 
+"""
 DATABASES = {
     'default': dj_database_url.config()
 }
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
