@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django_summernote',
 
 
     # My apps
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -93,12 +94,12 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-"""
 
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -137,9 +138,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/app/media/'
+MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'templates/static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'app/media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 MESSAGE_TAGS = {
@@ -150,7 +151,5 @@ MESSAGE_TAGS = {
     constants.INFO: 'alert-info',
 }
 
-INSTALLED_APPS += ('django_summernote', )
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-LOGOUT_REDIRECT_URL = 'index'
