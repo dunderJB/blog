@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block conteudo %}
 <!-- POST -->
@@ -38,12 +39,12 @@
             <h2 class="my-3">Comentários ({{ comentarios.count }})</h2>
 
 
-        {% for comentario in comentarios %}
+            {% for comentario in comentarios %}
             <h5 class="mb-2 mt-5">{{ comentario.nome_comentario|title }} disse:</h5>
             <small class="text-muted">{{ comentario.data_comentario }}</small>
             <p class="mb-1">{{ comentario.comentario }}</p>
 
-        {% endfor %}
+            {% endfor %}
 
 
         </div>
@@ -60,14 +61,15 @@
             <form method="POST" action="#envia_comentario">
                 {% csrf_token %}
                 <table class="table">
-                    {{ form }}
+                    {{ form|crispy }}
                     <tr>
                         <td colspan="2">
                             {% include 'parciais/_messages.html' %}
-                            <input id="envia_comentario" type="submit" class="btn btn-primary"
-                                value="Enviar">
+                            <input id="envia_comentario" type="submit" class="btn btn-primary" value="Enviar">
                         </td>
                     </tr>
+                    <div class="g-recaptcha" data-sitekey="6LcOkA0aAAAAAIIVRUwJCAnrcHOw1z2Yj5FmqE63"></div>
+                    <br />
                 </table>
             </form>
 
@@ -76,5 +78,5 @@
         <div class="col-xl"></div>
     </div>
 </div>
-                <!-- POST -->
+<!-- POST -->
 {% endblock %}
