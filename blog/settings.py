@@ -160,3 +160,11 @@ AUTHENTICATION_BACKENDS = [
     # Django ModelBackend is the default authentication backend.
     "django.contrib.auth.backends.ModelBackend",
 ]
+
+
+AWS_ACCESS_KEY_ID = "AKIASU7TRVYCXY3RNSOK"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "jb-blog-django"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
