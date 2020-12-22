@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "posts",
     "crispy_forms",
     "axes",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -160,3 +161,14 @@ AUTHENTICATION_BACKENDS = [
     # Django ModelBackend is the default authentication backend.
     "django.contrib.auth.backends.ModelBackend",
 ]
+
+
+AWS_ACCESS_KEY_ID = "AKIASU7TRVYCUREYMHBU"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "jb-blog-aws"
+
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
